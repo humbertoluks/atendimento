@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br   ">
+<head>
+    <meta charset="UTF-8">
+    <!-- Fornece ao navegador instruções sobre como controlar as dimensões e a escala da página. -->
+    <!-- Para design responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Atendimento</title>
+</head>
+<body>
+    <section>
+        <h1>Atendimento</h1>
+        <form action="#" method="post">
+            <fieldset>
+                <div class="input-container">
+                    <input type="text" id="carteirinha" name="patient_id" required>
+                    <label for="nome">carteirinha/cpf</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="servico" name="service" required>
+                    <label for="servico">serviço</label>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <div class="select-container">
+                    <select id="uf" name="professional_uf">
+                        <!-- <option disabled selected value> -- Selecione um -- </option> -->
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="MG">MG</option>
+                    </select>
+            
+                    <label for="uf">uf</label>
+                </div>
+                <div class="select-container">
+                    <select id="conselho" name="professional_group">
+                        <!-- <option disabled selected value> -- Selecione um -- </option> -->
+                        <option value="CRM">CRM</option>
+                        <option value="CRO">CRO</option>
+                    </select>
+            
+                    <label for="conselho">conselho</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="input-container">
+                    <input type="text" id="numero_conselho" name="professional_group_number" required>
+            
+                    <label for="numero_conselho">numero</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="nome_profissional" name="professional_name" required>
+            
+                    <label for="nome_profissional">profissional</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="input-container">
+                    <input type="text" id="procedure_date" name="data_procedimento" required>
+            
+                    <label for="data_procedimento">data</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="quantidade_procedimento" name="procedure_quantity" value="1" required>
+            
+                    <label for="quantidade_procedimento">qtd.</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="codigo_procedimento" name="procedure_code" required>
+            
+                    <label for="codigo_procedimento">código</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="descricao_procedimento" name="procedure_name" required>
+            
+                    <label for="descricao_procedimento">procedimento</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="valor_procedimento" name="value" value="0,00" required>
+            
+                    <label for="valor_procedimento">valor</label>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <div class="input-container">
+                    <input type="text" id="token" name="token" required>
+            
+                    <label for="token">token</label>
+                </div>
+                <button>Salvar</button>
+                <button>Imprir</button>
+            </fieldset>
+        </form>
+    </section>
+</body>
+</html>

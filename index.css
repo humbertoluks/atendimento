@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+/* Define as propriedades a todos as elementos da página */
+* {
+    /* Remove a margem externa de todos os lados do elemento */
+    margin: 0;
+    /* Remove o espaçamento interno de todos os lados do elemento */
+    padding: 0;
+    /* O preenchimento e a borda serão incluídos na largura e na altura*/
+    box-sizing: border-box;
+}
+
+body {
+    /* Define a cor de fundo do corpo */
+        background: #2e2e2e;
+        /* Define a cor da fonte do corpo */
+        color: #333;
+        /* Define a fonte do corpo */
+        font-family: Arial, sans-serif;
+        /* torna o elemento um flex container, 
+           transformando todos os seus elementos
+           internos (filhos) em flex itens */
+        display: flex;
+        /* A alinha os flex itens de acordo com o eixo
+           do container */
+        align-items: center;
+    
+        /* Alinha os flex itens no container de
+           acordo a direção */
+        justify-content: center;
+    
+        /* Altura minima do elemento. 
+           Unidades de tamanho da tela vh e vw.*/
+        min-height: 100vh;
+}
+
+section {
+    background: #fff;
+
+    /* Gerar espaço ao redor do conteúdo do elemento
+       30px superior e inferior
+       5px esquerda e direita */
+    padding: 30px 5px;
+
+    /* Arredonda os cantos do elemento */
+    border-radius: 10px;
+
+    /* Adiciona sombra ao elemento */
+    box-shadow: 5px 5px 15px;
+
+    /* tamanho máximo do elemento */
+    max-width: 70vw;
+}
+
+h1 {
+    padding: 40px 10px;
+    text-align: center;
+}
+
+fieldset {
+    border: none;
+}
+/* selecionar um ou mais elementos em um grupo de elementos. 
+   **nth-child**, faz com que o fieldset seja selecionado de acordo com a ordem/index.
+   A ordem começa em 1
+*/
+fieldset:nth-child(2) {
+    display: flex;
+    padding-top: 20px;
+}
+
+fieldset:nth-child(3) {
+    display: flex;
+}
+
+fieldset:nth-child(4) {
+    display: flex;
+    padding-top: 20px;
+}
+
+fieldset:nth-child(5) {
+    display: flex;
+    padding-top: 20px;
+}
+
+/* components */
+/* input */
+.input-container {
+    position: relative;
+    display: flex;
+}
+
+.input-container input {
+    /* altura dos elementos */
+    height: 70px;
+    /* define a largura dos elementos */
+    width: calc(100% - 20px);
+    margin: 10px 10px;
+    /* remove a borda dos elementos*/
+    border: none;
+
+    background-color: #ededed;
+    /* arredontar os cantos dos elementos */
+    border-radius: 4px;
+
+    padding: 14px 10px 0 10px;
+
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.input-container label {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9d9d9d;
+
+    /* Posiciona qualquer elemento de acordo com o
+        elemento pai, deixando de fazer parte do fluxo
+        comum do documento */
+    position: absolute;
+    line-height: 70px;
+    top: 10px;
+    left: 20px;
+
+    user-select: none;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-container input:focus~label,
+.input-container input:valid~label {
+    left: 20px;
+    top: -10px;
+    font-size: 12px;
+    color: #00acd7;
+}
+
+.input-container select:valid~label {
+    left: 20px;
+    top: -10px;
+    font-size: 12px;
+    color: #00acd7;
+}
+
+/* select */
+.select-container {
+    position: relative;
+    display: flex;
+    height: 70px;
+    width: calc(100% - 20px);;
+    margin: 10px 10px;
+    line-height: 4.3;
+    /* background-color: #ededed; */
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #ededed;
+    background-image: none;
+    flex: 1;
+    padding: 14px 10px 0 10px;
+    color: #333;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select-container::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #9d9d9d;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+.select-container:hover::after {
+    color: #ededed;
+}
+
+.select-container label {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9d9d9d;
+
+    /* Posiciona qualquer elemento de acordo com o
+        elemento pai, deixando de fazer parte do fluxo
+        comum do documento */
+    position: absolute;
+    line-height: 70px;
+    top: 10px;
+    left: 20px;
+
+    user-select: none;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.select-container select:valid~label {
+    left: 10px;
+    top: -20px;
+    font-size: 12px;
+    color: #00acd7;
+}
+
