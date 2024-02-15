@@ -199,7 +199,7 @@ select::-ms-expand {
     top: 0;
     right: 0;
     padding: 0 1rem;
-    background: --select-bg-color;
+    background: var(--label-color);
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease;
@@ -229,8 +229,8 @@ select::-ms-expand {
 }
 
 .select-container select:valid~label {
-    left: 0.625rem;
-    top: -1.25rem;
+    top: 0.625rem;
+    left: 1.25rem;
     font-size: 0.75rem;
     color: var(--label-selected-color);
 }
