@@ -10,11 +10,25 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-size: 16px;
+    --main-bg-color: #2e2e2e;
+    --main-font-color: #333;
+    --section-bg-color: #fff;
+    --section-shadow-color: #000;
+    --label-color: #9d9d9d;
+    --label-selected-color: #00acd7;
+    --select-bg-color: #ededed;
+    --input-bg-color: #ededed;
+    --button-bg-color: #00acd7;
+    --button-font-color: #fff;
+}
+
 body {
     /* Define a cor de fundo do corpo */
-        background: #2e2e2e;
+        background: var(--main-bg-color);
         /* Define a cor da fonte do corpo */
-        color: #333;
+        color: var(--main-font-color);
         /* Define a fonte do corpo */
         font-family: Arial, sans-serif;
         /* torna o elemento um flex container, 
@@ -34,27 +48,25 @@ body {
         min-height: 100vh;
 }
 
+
 section {
-    background: #fff;
+    background: var(--section-bg-color);
 
     /* Gerar espaço ao redor do conteúdo do elemento
        30px superior e inferior
        5px esquerda e direita */
-    padding: 30px 5px;
+    padding: 1.875rem 0.3125rem;
 
     /* Arredonda os cantos do elemento */
-    border-radius: 10px;
-
+    border-radius: 0.625rem;
     /* Adiciona sombra ao elemento */
-    box-shadow: 5px 5px 15px;
-
+    box-shadow: 0.3125rem 0.3125rem 0.9375rem --section-shadow-color;
     /* tamanho máximo do elemento */
     max-width: 70vw;
 }
 
 h1 {
-    padding: 40px 10px;
-    text-align: center;
+    padding: 2.5rem 0.625rem;    text-align: center;
 }
 
 fieldset {
@@ -66,7 +78,7 @@ fieldset {
 */
 fieldset:nth-child(2) {
     display: flex;
-    padding-top: 20px;
+    padding-top: 1.25rem;
 }
 
 fieldset:nth-child(3) {
@@ -75,54 +87,57 @@ fieldset:nth-child(3) {
 
 fieldset:nth-child(4) {
     display: flex;
-    padding-top: 20px;
+    padding-top: 1.25rem;
 }
 
 fieldset:nth-child(5) {
     display: flex;
-    padding-top: 20px;
+    padding-top: 1.25rem;
 }
 
+.container {
+    display: flex;
+    flex: 1;
+}
 /* components */
 /* input */
 .input-container {
     position: relative;
     display: flex;
+    flex: 1;
 }
 
 .input-container input {
     /* altura dos elementos */
-    height: 70px;
+    height: 4.375rem;
     /* define a largura dos elementos */
-    width: calc(100% - 20px);
-    margin: 10px 10px;
-    /* remove a borda dos elementos*/
+    width: calc(100% - 1.25rem);
+    margin: 0.625rem 0.625rem; /* remove a borda dos elementos*/
     border: none;
 
-    background-color: #ededed;
+    background-color: var(--input-bg-color);
     /* arredontar os cantos dos elementos */
-    border-radius: 4px;
+    border-radius: 0.25rem;
+    padding: 0.875rem 0.625rem 0 0.625rem;
 
-    padding: 14px 10px 0 10px;
-
-    color: #333;
-    font-size: 18px;
+    color: var(--main-font-color);
+    font-size: 1.125rem;
     font-weight: 700;
 }
 
 .input-container label {
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 700;
-    color: #9d9d9d;
+    color: var(--label-color);
 
     /* Posiciona qualquer elemento de acordo com o
         elemento pai, deixando de fazer parte do fluxo
         comum do documento */
     position: absolute;
-    line-height: 70px;
-    top: 10px;
-    left: 20px;
+    line-height: 4.375rem;
+    top: 0.625rem;
+    left: 1.25rem;
 
     user-select: none;
     pointer-events: none;
@@ -131,17 +146,17 @@ fieldset:nth-child(5) {
 
 .input-container input:focus~label,
 .input-container input:valid~label {
-    left: 20px;
-    top: -10px;
+    left: 1.25rem;
+    top: -0.625rem;
     font-size: 12px;
-    color: #00acd7;
+    color: var(--label-selected-color);
 }
 
 .input-container select:valid~label {
-    left: 20px;
-    top: -10px;
+    left: 1.25rem;
+    top: -0.625rem;
     font-size: 12px;
-    color: #00acd7;
+    color: var(--label-selected-color);
 }
 
 /* select */
@@ -149,12 +164,11 @@ fieldset:nth-child(5) {
     position: relative;
     display: flex;
     height: 70px;
-    width: calc(100% - 20px);;
-    margin: 10px 10px;
+    width: calc(100% - 1.25rem);
+    margin: 0.625rem 0.625rem;
     line-height: 4.3;
-    /* background-color: #ededed; */
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 0.25rem;
 }
 
 select {
@@ -165,13 +179,13 @@ select {
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: #ededed;
+    background: var(--select-bg-color);
     background-image: none;
     flex: 1;
-    padding: 14px 10px 0 10px;
-    color: #333;
+    padding: 0.875rem 0.625rem 0 0.625rem;
+    color: var(--main-font-color);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
 }
 
@@ -184,30 +198,30 @@ select::-ms-expand {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0 1em;
-    background: #9d9d9d;
+    padding: 0 1rem;
+    background: --select-bg-color;
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease;
 }
 
 .select-container:hover::after {
-    color: #ededed;
+    color: var(--select-bg-color);
 }
 
 .select-container label {
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 0.875px;
     font-weight: 700;
-    color: #9d9d9d;
+    color: var(--label-color);
 
     /* Posiciona qualquer elemento de acordo com o
         elemento pai, deixando de fazer parte do fluxo
         comum do documento */
     position: absolute;
-    line-height: 70px;
-    top: 10px;
-    left: 20px;
+    line-height: 4.375px;
+    top: 0.625rem;
+    left: 1.25rem;
 
     user-select: none;
     pointer-events: none;
@@ -215,9 +229,24 @@ select::-ms-expand {
 }
 
 .select-container select:valid~label {
-    left: 10px;
-    top: -20px;
-    font-size: 12px;
-    color: #00acd7;
+    left: 0.625rem;
+    top: -1.25rem;
+    font-size: 0.75rem;
+    color: var(--label-selected-color);
 }
 
+/* button */
+.btn {
+    height: 4.375rem;
+    width: 100%;
+    margin: 0.625rem 0.625rem;
+    padding: 0.625rem;
+    border: none;
+    background-color: var(--button-bg-color);
+    color: var(--button-font-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: 0.5s;
+}
